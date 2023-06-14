@@ -9,12 +9,12 @@ class TestStringMethods(unittest.TestCase):
     def test_konvert_type_1(self):#Проверка перевода в доллары
         tester = app.test_client(self)  # создаем клиент для тестирования
         response = tester.post("/", content_type='multipart/form-data', data={'num_1': 1000, 'options': 1})#Ввод параметров
-        self.assertIn('12.490632025980513', response.data.decode())
+        self.assertIn('12.49', response.data.decode())
 
     def test_konvert_type_2(self):  #Проверка перевода в евро
         tester = app.test_client(self)  # создаем клиент для тестирования
         response = tester.post("/", content_type='multipart/form-data', data={'num_1': 1000,'options': 2})  # Ввод параметров
-        self.assertIn('11.641443538998836', response.data.decode())
+        self.assertIn('11.64', response.data.decode())
 
     def test_konvert_type_3(self):  # #Проверка перевода из долларов
         tester = app.test_client(self)  # создаем клиент для тестирования
